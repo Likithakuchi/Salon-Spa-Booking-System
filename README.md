@@ -8,16 +8,16 @@ Glow & Ease is a luxury, responsive web application for salon and spa booking. I
 
 ### 1. Requirements
 Ensure Python 3.x and Django are installed on your machine:
-```bash
+
 pip install django django-cors-headers djangorestframework
-```
+
 
 ### 2. Running the Django API Backend
 Navigate to the `Backend` directory and start the server:
-```bash
+
 cd SalonSpaBookingSystem/Backend
 python manage.py runserver 8000
-```
+
 *The server will boot on `http://127.0.0.1:8000`.*
 
 ### 3. Running the Frontend
@@ -57,7 +57,8 @@ SalonSpaBookingSystem/
 
 ### 1. Browser Landing Page & Hero Section
 The brand homepage features sleek micro-animations, interactive styling cards, and expert practitioner availability.
-![Glow & Ease Landing Page Mockup](SalonSpaBookingSystem/Frontend/images/browser_view.png)
+![Glow & Ease Landing Page Mockup]<img width="496" height="419" alt="Screenshot 2026-07-19 111457" src="https://github.com/user-attachments/assets/12590149-44c9-43e0-a174-5140f0f32aad" />
+
 
 ### 2. SQLite Database Schema
 Structured using 5 clean database entities with pre-seeded mockup items:

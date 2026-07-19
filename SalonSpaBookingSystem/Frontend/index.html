@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glow & Ease - Premium Salon & Spa Booking System</title>
+    <meta name="description" content="Experience professional salon and spa services. Book online, select your favorite stylists, and enjoy custom beauty treatments.">
+    <link rel="stylesheet" href="style.css">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Sticky Navigation Bar -->
+    <header class="navbar" id="header">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <i class="fa-solid fa-wand-magic-sparkles"></i> Glow & Ease
+            </a>
+            <nav>
+                <ul class="nav-links" id="nav-links-list">
+                    <!-- Dynamic rendering by script.js -->
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Banner Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Redefine Your Glow, Rejuvenate Your Soul</h1>
+                <p>Welcome to Glow & Ease, where professional styling, aesthetic beauty treatments, and therapeutic massage meet seamless digital booking. Elevate your self-care routine today.</p>
+                <div style="display: flex; gap: 1rem; justify-content: center;">
+                    <button id="hero-book-btn" class="btn btn-primary">Book Appointment <i class="fa-solid fa-calendar-check"></i></button>
+                    <a href="services.html" class="btn btn-secondary">Explore Services</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Services Section -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Our Featured Services</h2>
+            <p class="section-subtitle">Choose from our curated menu of hair cuts, styling, spa sessions, and skincare treatments designed to make you shine.</p>
+            <div class="grid-3" id="featured-services-grid">
+                <!-- Loaded Dynamically -->
+            </div>
+            <div style="text-align: center; margin-top: 3rem;">
+                <a href="services.html" class="btn btn-secondary">View All Services <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Popular Stylists Section -->
+    <section class="section" style="background: rgba(255,255,255,0.01); border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color);">
+        <div class="container">
+            <h2 class="section-title">Meet Our Experts</h2>
+            <p class="section-subtitle">Our team of experienced and specialized stylists are dedicated to crafting your perfect signature look.</p>
+            <div class="grid-3" id="popular-stylists-grid">
+                <!-- Loaded Dynamically -->
+            </div>
+            <div style="text-align: center; margin-top: 3rem;">
+                <a href="stylists.html" class="btn btn-secondary">View All Experts <i class="fa-solid fa-users"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Info Banner/USP Grid -->
+    <section class="section">
+        <div class="container">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; text-align: center;">
+                <div style="padding: 1.5rem; background: var(--bg-card); border-radius: 12px; border: 1px solid var(--border-color);">
+                    <div style="font-size: 2.5rem; color: #6366f1; margin-bottom: 1rem;"><i class="fa-solid fa-sparkles"></i></div>
+                    <h3>Premium Quality</h3>
+                    <p style="color: var(--text-secondary); font-size: 0.9rem; margin-top: 0.5rem;">We use top-tier organic products and tools for all styling and skin therapies.</p>
+                </div>
+                <div style="padding: 1.5rem; background: var(--bg-card); border-radius: 12px; border: 1px solid var(--border-color);">
+                    <div style="font-size: 2.5rem; color: #a855f7; margin-bottom: 1rem;"><i class="fa-solid fa-user-tie"></i></div>
+                    <h3>Expert Stylists</h3>
+                    <p style="color: var(--text-secondary); font-size: 0.9rem; margin-top: 0.5rem;">Our certified therapists and hair designers bring years of salon experience.</p>
+                </div>
+                <div style="padding: 1.5rem; background: var(--bg-card); border-radius: 12px; border: 1px solid var(--border-color);">
+                    <div style="font-size: 2.5rem; color: #ec4899; margin-bottom: 1rem;"><i class="fa-solid fa-clock"></i></div>
+                    <h3>Easy Booking</h3>
+                    <p style="color: var(--text-secondary); font-size: 0.9rem; margin-top: 0.5rem;">Reschedule, customize, and make digital payments in under 2 minutes.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Glow & Ease Salon & Spa. All rights reserved.</p>
+            <p style="font-size: 0.8rem; color: var(--text-muted);">Designed with luxury in mind.</p>
+        </div>
+    </footer>
+
+    <!-- Integration Script -->
+    <script src="script.js"></script>
+</body>
+</html>

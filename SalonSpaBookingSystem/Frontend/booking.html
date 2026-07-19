@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Appointment - Glow & Ease</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Sticky Navigation Bar -->
+    <header class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <i class="fa-solid fa-wand-magic-sparkles"></i> Glow & Ease
+            </a>
+            <nav>
+                <ul class="nav-links" id="nav-links-list"></ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Booking Flow Container -->
+    <section class="section">
+        <div class="container">
+            <h1 class="section-title" style="margin-bottom: 3rem;">Schedule Your Visit</h1>
+            
+            <div class="booking-grid">
+                
+                <!-- Left panel form -->
+                <div class="booking-panel">
+                    <h2>Select Appointment Details</h2>
+                    <div id="booking-error" style="color: #ef4444; background: rgba(239, 68, 68, 0.1); border: 1px solid rgba(239, 68, 68, 0.2); padding: 0.75rem; border-radius: 8px; font-size: 0.9rem; margin-bottom: 1.5rem; display: none;"></div>
+                    
+                    <form id="booking-form">
+                        <div class="form-group">
+                            <label for="booking-service" class="form-label">Service Required</label>
+                            <select id="booking-service" class="form-input form-select" required>
+                                <option value="">-- Loading Services --</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="booking-stylist" class="form-label">Stylist / Practitioner</label>
+                            <select id="booking-stylist" class="form-input form-select" required>
+                                <option value="">-- Loading Stylists --</option>
+                            </select>
+                        </div>
+                        
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                            <div class="form-group">
+                                <label for="booking-date" class="form-label">Date</label>
+                                <input type="date" id="booking-date" class="form-input" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="booking-time" class="form-label">Time Slot</label>
+                                <input type="time" id="booking-time" class="form-input" required>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                
+                <!-- Right panel summary -->
+                <div class="booking-summary-card">
+                    <h3>Booking Summary</h3>
+                    
+                    <div class="summary-row">
+                        <span class="summary-label">Service:</span>
+                        <span class="summary-value" id="sum-service">Not Selected</span>
+                    </div>
+                    <div class="summary-row">
+                        <span class="summary-label">Stylist:</span>
+                        <span class="summary-value" id="sum-stylist">Not Selected</span>
+                    </div>
+                    <div class="summary-row">
+                        <span class="summary-label">Date:</span>
+                        <span class="summary-value" id="sum-date">Not Selected</span>
+                    </div>
+                    <div class="summary-row">
+                        <span class="summary-label">Time:</span>
+                        <span class="summary-value" id="sum-time">Not Selected</span>
+                    </div>
+                    <div class="summary-row">
+                        <span class="summary-label">Duration:</span>
+                        <span class="summary-value" id="sum-duration">Not Selected</span>
+                    </div>
+                    
+                    <div class="summary-total">
+                        <span>Total:</span>
+                        <span id="sum-total">₹0</span>
+                    </div>
+                    
+                    <button type="button" id="confirm-booking-btn" class="btn btn-primary" style="width: 100%; margin-top: 2rem; padding: 0.8rem;">
+                        Proceed to Checkout <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Glow & Ease Salon & Spa. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Make the error div display dynamically
+        const observer = new MutationObserver(() => {
+            const errorDiv = document.getElementById('booking-error');
+            if (errorDiv.textContent.trim() !== '') {
+                errorDiv.style.display = 'block';
+            } else {
+                errorDiv.style.display = 'none';
+            }
+        });
+        observer.observe(document.getElementById('booking-error'), { childList: true });
+    </script>
+</body>
+</html>

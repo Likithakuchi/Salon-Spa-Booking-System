@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Glow & Ease</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Sticky Navigation Bar -->
+    <header class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <i class="fa-solid fa-wand-magic-sparkles"></i> Glow & Ease
+            </a>
+            <nav>
+                <ul class="nav-links" id="nav-links-list"></ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Auth Wrapper -->
+    <div class="auth-wrapper">
+        <div class="auth-card">
+            <div class="auth-header">
+                <h2>Welcome Back</h2>
+                <p>Login to schedule appointments and view billing</p>
+            </div>
+            
+            <div id="login-error" style="color: #ef4444; background: rgba(239, 68, 68, 0.1); border: 1px solid rgba(239, 68, 68, 0.2); padding: 0.75rem; border-radius: 8px; font-size: 0.9rem; margin-bottom: 1.5rem; text-align: center; display: none;"></div>
+            
+            <form id="login-form">
+                <div class="form-group">
+                    <label for="email" class="form-label">Email Address</label>
+                    <input type="email" id="email" class="form-input" placeholder="e.g. rahul@gmail.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="password" class="form-label">Password</label>
+                    <input type="password" id="password" class="form-input" placeholder="••••••••" required>
+                </div>
+                
+                <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 1rem; padding: 0.8rem;">
+                    Sign In <i class="fa-solid fa-right-to-bracket"></i>
+                </button>
+            </form>
+            
+            <div class="form-footer">
+                Don't have an account? <a href="register.html">Register Here</a>
+            </div>
+            
+            <!-- Quick Demo Credentials Guide -->
+            <div style="margin-top: 2rem; padding: 1rem; background: rgba(255,255,255,0.02); border: 1px solid var(--border-color); border-radius: 8px; font-size: 0.8rem; color: var(--text-secondary);">
+                <p style="font-weight: 600; color: var(--text-primary); margin-bottom: 0.5rem;"><i class="fa-solid fa-circle-info"></i> Demo Credentials</p>
+                <p><strong>Admin:</strong> admin@salon.com | admin123</p>
+                <p><strong>Customer:</strong> rahul@gmail.com | rahul123</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Glow & Ease Salon & Spa. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Make the error div display dynamically
+        const observer = new MutationObserver(() => {
+            const errorDiv = document.getElementById('login-error');
+            if (errorDiv.textContent.trim() !== '') {
+                errorDiv.style.display = 'block';
+            } else {
+                errorDiv.style.display = 'none';
+            }
+        });
+        observer.observe(document.getElementById('login-error'), { childList: true });
+    </script>
+</body>
+</html>

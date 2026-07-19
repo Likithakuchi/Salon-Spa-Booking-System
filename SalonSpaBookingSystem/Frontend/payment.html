@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure Checkout - Glow & Ease</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Sticky Navigation Bar -->
+    <header class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <i class="fa-solid fa-wand-magic-sparkles"></i> Glow & Ease
+            </a>
+            <nav>
+                <ul class="nav-links" id="nav-links-list"></ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="auth-wrapper">
+        <div class="auth-card" style="max-width: 500px;">
+            <div class="auth-header">
+                <h2>Secure Payment Gateway</h2>
+                <p>Complete payment transactions to confirm your appointment slot</p>
+            </div>
+            
+            <div id="payment-error" style="color: #ef4444; background: rgba(239, 68, 68, 0.1); border: 1px solid rgba(239, 68, 68, 0.2); padding: 0.75rem; border-radius: 8px; font-size: 0.9rem; margin-bottom: 1.5rem; display: none;"></div>
+            
+            <!-- Summary box -->
+            <div style="background: rgba(255,255,255,0.02); border: 1px solid var(--border-color); border-radius: 12px; padding: 1.5rem; margin-bottom: 2rem;">
+                <h3 style="margin-bottom: 1rem; font-size: 1.1rem; color: var(--color-primary);">Booking Summary</h3>
+                <div style="display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.9rem;">
+                    <div style="display: flex; justify-content: space-between;">
+                        <span style="color: var(--text-secondary);">Treatment:</span>
+                        <strong id="payment-service">-</strong>
+                    </div>
+                    <div style="display: flex; justify-content: space-between;">
+                        <span style="color: var(--text-secondary);">Expert Stylist:</span>
+                        <strong id="payment-stylist">-</strong>
+                    </div>
+                    <div style="display: flex; justify-content: space-between;">
+                        <span style="color: var(--text-secondary);">Scheduled Slot:</span>
+                        <strong id="payment-datetime">-</strong>
+                    </div>
+                </div>
+            </div>
+            
+            <form id="payment-form" onsubmit="event.preventDefault();">
+                <div class="form-group">
+                    <label for="payment-method" class="form-label">Payment Method</label>
+                    <select id="payment-method" class="form-input form-select" required>
+                        <option value="UPI">UPI (Google Pay, PhonePe, Paytm)</option>
+                        <option value="Credit Card">Credit Card</option>
+                        <option value="Debit Card">Debit Card</option>
+                        <option value="Cash">Pay at Salon (Cash)</option>
+                    </select>
+                </div>
+                
+                <div class="summary-total" style="margin-bottom: 2rem; border-top: none; padding-top: 0;">
+                    <span>Total Amount Payable:</span>
+                    <span id="payment-amount" style="color: var(--color-secondary); font-size: 1.8rem; font-weight: 800;">₹0</span>
+                </div>
+                
+                <button type="button" id="pay-now-btn" class="btn btn-primary" style="width: 100%; padding: 0.9rem; font-size: 1rem;">
+                    Pay & Confirm Appointment <i class="fa-solid fa-circle-check"></i>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Glow & Ease Salon & Spa. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Make the error div display dynamically
+        const observer = new MutationObserver(() => {
+            const errorDiv = document.getElementById('payment-error');
+            if (errorDiv.textContent.trim() !== '') {
+                errorDiv.style.display = 'block';
+            } else {
+                errorDiv.style.display = 'none';
+            }
+        });
+        observer.observe(document.getElementById('payment-error'), { childList: true });
+    </script>
+</body>
+</html>

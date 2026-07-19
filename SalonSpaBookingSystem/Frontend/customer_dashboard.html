@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Dashboard - Glow & Ease</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Sticky Navigation Bar -->
+    <header class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <i class="fa-solid fa-wand-magic-sparkles"></i> Glow & Ease
+            </a>
+            <nav>
+                <ul class="nav-links" id="nav-links-list"></ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="section" style="flex-grow: 1;">
+        <div class="container">
+            <h1 class="section-title" style="text-align: left; margin-bottom: 2rem;">My Salon Portal</h1>
+            
+            <div style="display: grid; grid-template-columns: 1fr 2.5fr; gap: 3rem; align-items: start;">
+                
+                <!-- Profile details -->
+                <div class="card" style="padding: 2rem;">
+                    <div style="text-align: center; margin-bottom: 1.5rem;">
+                        <div style="width: 80px; height: 80px; border-radius: 50%; background: var(--grad-primary); display: flex; align-items: center; justify-content: center; font-size: 2rem; color: white; font-weight: 700; margin: 0 auto 1rem;">
+                            <i class="fa-regular fa-user"></i>
+                        </div>
+                        <h2 id="cust-name" style="font-size: 1.3rem;">Rahul Sharma</h2>
+                        <span style="color: var(--text-secondary); font-size: 0.85rem;">Registered Client</span>
+                    </div>
+                    
+                    <div style="display: flex; flex-direction: column; gap: 1rem; border-top: 1px solid var(--border-color); padding-top: 1.5rem; font-size: 0.9rem;">
+                        <div>
+                            <span style="color: var(--text-secondary); display: block;">Email Address</span>
+                            <strong id="cust-email">rahul@gmail.com</strong>
+                        </div>
+                        <div>
+                            <span style="color: var(--text-secondary); display: block;">Phone Number</span>
+                            <strong id="cust-phone">9876543210</strong>
+                        </div>
+                    </div>
+                    
+                    <a href="booking.html" class="btn btn-primary" style="margin-top: 2rem; width: 100%;">
+                        Book Appointment <i class="fa-solid fa-calendar-plus"></i>
+                    </a>
+                </div>
+                
+                <!-- Main details area -->
+                <div style="display: flex; flex-direction: column; gap: 3rem;">
+                    
+                    <!-- 1. Upcoming slots -->
+                    <div>
+                        <h3 style="font-size: 1.3rem; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;">
+                            <i class="fa-regular fa-clock" style="color: var(--color-primary);"></i> Upcoming Appointments
+                        </h3>
+                        <div class="table-wrapper">
+                            <table class="data-table">
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Service</th>
+                                        <th>Stylist</th>
+                                        <th>Date & Time</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="upcoming-appointments-list">
+                                    <!-- Dynamic rows -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    
+                    <!-- 2. Completed treatments -->
+                    <div>
+                        <h3 style="font-size: 1.3rem; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;">
+                            <i class="fa-regular fa-circle-check" style="color: var(--status-available);"></i> Completed Services
+                        </h3>
+                        <div class="table-wrapper">
+                            <table class="data-table">
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Service</th>
+                                        <th>Stylist</th>
+                                        <th>Date</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="completed-services-list">
+                                    <!-- Dynamic rows -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    
+                    <!-- 3. Billing ledger -->
+                    <div>
+                        <h3 style="font-size: 1.3rem; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;">
+                            <i class="fa-solid fa-receipt" style="color: var(--color-secondary);"></i> Payment History
+                        </h3>
+                        <div class="table-wrapper">
+                            <table class="data-table">
+                                <thead>
+                                    <tr>
+                                        <th>Payment ID</th>
+                                        <th>Appointment</th>
+                                        <th>Amount</th>
+                                        <th>Method</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="payment-history-list">
+                                    <!-- Dynamic rows -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Glow & Ease Salon & Spa. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
